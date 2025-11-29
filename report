@@ -1,1 +1,105 @@
+Enhanced Hospital Management System
+Name: ADHYAN GARG
+SAP ID: 590026649
+Batch: B45
+Submitted To: Dolly Das Maam
+Academic Year: 2025–2029
+1. Abstract
+This project presents an enhanced Hospital Management System developed in C programming. It includes advanced features such as assigned doctor, room allocation, admission status, listing admitted patients, discharging patients, and displaying hospital statistics. The program demonstrates key concepts such as structures, arrays, functions, loops, and menu-driven programming.
+2. Problem Definition
+•	Hospitals require a simple system to maintain patient information.
+•	Manual data recording leads to errors and difficulty in management.
+•	The system must track admitted and discharged patients.
+•	Doctor assignment and room allocation should be recorded.
+•	Hospital staff should be able to update or delete patient data easily.
+•	Statistics such as average age and gender distribution should be available.
+3. System Design
+3.1 Flowchart (Conceptual)
+START → Menu → Selected Operation → Action Performed → Return to Menu → EXIT
+3.2 System Components
+•	Patient structure to store all attributes.
+•	Array of structures to hold up to 100 patient records.
+•	Add, Display, Search, Update, Delete modules.
+•	Admission and discharge modules.
+•	Statistics module for hospital insights.
+•	Menu-driven control for user interaction.
+4. Implementation Details
+4.1 Concepts Used
+•	Structure to store patient information.
+•	Array of structures to store multiple patient entries.
+•	Functions to modularize program features.
+•	Loops and conditionals for control flow.
+•	Menu displayed using printf(), input through scanf().
+4.2 Main Structure Definition
+struct Patient {
+   int id;
+   char name[50];
+   int age;
+   char gender[10];
+   char disease[50];
+   char doctor[50];
+   int roomNumber;
+   int admitted;
+};
+4.3 Important Code Snippets
+--- Add Patient ---
+scanf("%s", patients[count].name);
+scanf("%s", patients[count].doctor);
+scanf("%d", &patients[count].roomNumber);
+
+--- Discharge Patient ---
+patients[i].admitted = 0;
+patients[i].roomNumber = 0;
+--- List Admitted Patients ---
+if (patients[i].admitted == 1) print patient details;
+--- Statistics ---
+averageAge = totalAge / count;
+
+4.4 Important Code Snippets
+Adding a Patient
+printf("Enter Doctor Name: ");
+scanf("%s", patients[count].doctor);
+
+printf("Enter Room Number (0 if not admitted): ");
+scanf("%d", &patients[count].roomNumber);
+
+patients[count].admitted = (patients[count].roomNumber == 0) ? 0 : 1;
+4.5 Listing Only Admitted Patients
+
+if (patients[i].admitted == 1) {
+    printf("Name: %s\n", patients[i].name);
+    printf("Room: %d\n", patients[i].roomNumber);
+}
+4.6 Discharging a Patient
+
+patients[i].admitted = 0;
+patients[i].roomNumber = 0;
+printf("Patient discharged successfully.\n");
+Hospital Statistics
+float averageAge = (float)totalAge / count;
+
+5. Testing & Results
+•	Patient Added Successfully → System stores ID, Name, Age, Gender, Doctor, Room No., Status.
+•	Display Patients → Shows full list with doctor and room information.
+•	Search Patients → Displays complete information by ID.
+•	Update Patient → Modifies existing data successfully.
+•	Delete Patient → Removes record and shifts remaining entries.
+•	List Admitted Patients → Shows only patients currently admitted.
+•	Discharge Patient → Changes status to discharged and resets room number.
+•	Statistics → Shows total patients, average age, gender count.
+6. Conclusion & Future Work
+•	The program effectively manages patient details.
+•	It includes important hospital features like doctor assignment and room allocation.
+•	Admission and discharge modules simulate real hospital processes.
+•	Statistics provide helpful insights into hospital data.
+Future Enhancements
+•	Add file handling to save data permanently.
+•	Add doctor and staff management modules.
+•	Add appointment and billing systems.
+•	Improve UI with formatting.
+•	Add database connectivity in future versions.
+7. References
+•	C Programming Textbooks
+•	Classroom Notes
+•	Project Format Guidelines
 
